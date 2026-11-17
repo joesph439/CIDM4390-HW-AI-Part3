@@ -3,20 +3,22 @@ public class Combat
 {
     private readonly Messages _messages;
     private readonly TextWriter _output;
-    public Combat(Messages? messages = null, TextWriter? output = null)
+    private readonly Func<int, int> _roll;
+    public Combat(Messages? messages = null, TextWriter? output = null, Func<int, int>? roll = null)
     {
         _messages = messages ?? new Messages();
         _output = output ?? Console.Out;
+        _roll = roll ?? Die.Roll;
     }
     public bool CheckHit(int strength)
     {
-        int roll = Die.Roll(20);
+        int roll = _roll(20);
         _output.WriteLine(_messages.FormatMessage(61, ("roll", roll)));
         return roll <= strength;
     }
     public bool CheckDefense(int agility)
     {
-        int roll = Die.Roll(20);
+        int roll = _roll(20);
         _output.WriteLine(_messages.FormatMessage(62, ("roll", roll)));
         return roll <= agility;
     }
@@ -26,7 +28,7 @@ public class Combat
         {
             throw new ArgumentOutOfRangeException(nameof(maxWeaponDamage));
         }
-        return Die.Roll(maxWeaponDamage);
+        return _roll(maxWeaponDamage);
     }
     public void DragonTaunt()
     {
@@ -53,7 +55,8 @@ public class Combat
             _output.WriteLine(_messages.FormatMessage(22, ("dragonName", dragon.DragonName)));
             return dragon.DragonHealth;
         }
-        int damage = CalculateDamage(character.Weapon.maxDamage);
+        int damage = CalculateDamage(character.Weapon.maxDamage)
+            + (character.OwnedUpgrade == Upgrade.MagicalWeapon ? 5 : 0);
         dragon.DragonHealth -= damage;
         _output.WriteLine(_messages.FormatMessage(23,
             ("damage", damage),
@@ -84,7 +87,8 @@ public class Combat
             _output.WriteLine(_messages.GetMessage(38));
             return character.Health;
         }
-        int damage = CalculateDamage(dragon.Weapon.maxDamage);
+        int damage = Math.Max(0, CalculateDamage(dragon.Weapon.maxDamage)
+            - (character.OwnedUpgrade == Upgrade.MagicalArmor ? 3 : 0));
         character.Health -= damage;
         _output.WriteLine(_messages.FormatMessage(39,
             ("damage", damage),

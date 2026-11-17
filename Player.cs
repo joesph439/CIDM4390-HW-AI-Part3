@@ -10,6 +10,25 @@ public class Player
     public int Agility { get; set; }
     public int Health { get; set; }
     public Weapon Weapon { get; set; }
+    public int Gold { get; set; } = 100;
+    public Upgrade OwnedUpgrade { get; private set; }
+
+    public bool TryBuyUpgrade(Upgrade upgrade)
+    {
+        int price = upgrade switch
+        {
+            Upgrade.MagicalArmor => 50,
+            Upgrade.MagicalWeapon => 75,
+            _ => throw new ArgumentOutOfRangeException(nameof(upgrade))
+        };
+        if (OwnedUpgrade != Upgrade.None || Gold < price)
+        {
+            return false;
+        }
+        Gold -= price;
+        OwnedUpgrade = upgrade;
+        return true;
+    }
 
     public Player(
         string name,
@@ -47,6 +66,8 @@ public class Player
             $"{Label(messages, 32, "Health points")}: {Health}\n" +
             $"{Label(messages, 33, "Weapon")}: {Weapon.type}\n" +
             $"{Label(messages, 34, "Maximum Weapon Damage")}: {Weapon.maxDamage}\n" +
+            $"{Label(messages, 85, "Gold")}: {Gold}\n" +
+            $"{Label(messages, 86, "Upgrade")}: {Label(messages, 87 + (int)OwnedUpgrade, OwnedUpgrade switch { Upgrade.MagicalArmor => "Magical armor", Upgrade.MagicalWeapon => "Magical weapon", _ => "None" })}\n" +
             $"{Weapon.asciiArt}\n" +
             "================================";
     }

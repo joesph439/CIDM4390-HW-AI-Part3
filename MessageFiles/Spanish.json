@@ -2,7 +2,7 @@
   "5": "Bienvenido al juego Elige Tu Propia Aventura",
   "6": "Elige: 1. Crear personaje o 2. Salir. Escribe '1' o '2'",
   "7": "Caminas por las montañas. Ves dos caminos: uno va hacia el norte y sube más alto por las montañas. El otro va hacia el sur, hacia el bosque. Escribe 'n' para el norte. Escribe 's' para el sur. Escribe 'e' para salir del juego.",
-  "8": "Tomas el camino del sur. Después de muchos días largos, no sucede nada aventurero. Te aburres y regresas a casa, pobre y todavía aburrido.",
+  "8": "Tomas el camino del sur y encuentras a un mercader en el bosque.",
   "9": "Tomas el camino del norte. Después de caminar durante horas, el aire se vuelve más frío y los árboles se hacen más escasos. Te encuentras con un dragón. El dragón tiene un tesoro de oro detrás de él.",
   "10": "El dragón dice: 'Soy {dragonName}. ¡Vete o perece!'",
   "11": "Tu anillo mágico te muestra las estadísticas del dragón.",
@@ -73,5 +73,16 @@
   "76": "Bastón",
   "77": "Daga",
   "78": "Arco",
-  "79": "tirar"
+  "79": "tirar",
+  "80": "Elige: 1. Armadura mágica (50 de oro): reduce el daño del dragón en 3, mínimo 0. 2. Arma mágica (75 de oro): encanta tu arma actual y añade 5 de daño a los ataques acertados y no bloqueados. 3. Salir.",
+  "81": "¡Has comprado una armadura mágica! El daño del dragón se reduce en 3, mínimo 0. Oro restante: {gold}.",
+  "82": "¡Tu arma ahora es mágica! Los ataques acertados y no bloqueados infligen 5 de daño adicional. Oro restante: {gold}.",
+  "83": "No tienes suficiente oro. Elige otro objeto o sal sin comprar.",
+  "84": "Ya tienes una mejora. Solo se permite una compra por partida.",
+  "85": "Oro",
+  "86": "Mejora",
+  "87": "Ninguna",
+  "88": "Armadura mágica",
+  "89": "Arma mágica",
+  "90": "Tu oro: {gold}"
 }

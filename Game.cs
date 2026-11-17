@@ -102,6 +102,7 @@ public class Game
             }
 
             _output.WriteLine(_messages.GetMessage(8));
+            VisitMerchant();
         }
 
         if (pathChoice == "e")
@@ -136,6 +137,36 @@ public class Game
         startAttack();
     }
 
+    private void VisitMerchant()
+    {
+        Player player = Player ?? throw new InvalidOperationException(
+            "There is no character. Create one before visiting the merchant.");
+        if (player.OwnedUpgrade != Upgrade.None)
+        {
+            _output.WriteLine(_messages.GetMessage(84));
+            return;
+        }
+
+        while (true)
+        {
+            _output.WriteLine(_messages.FormatMessage(90, ("gold", player.Gold)));
+            string choice = ReadChoice(80, "1", "2", "3");
+            if (choice == "3")
+            {
+                return;
+            }
+            Upgrade upgrade = choice == "1" ? Upgrade.MagicalArmor : Upgrade.MagicalWeapon;
+            if (!player.TryBuyUpgrade(upgrade))
+            {
+                _output.WriteLine(_messages.GetMessage(83));
+                continue;
+            }
+            _output.WriteLine(_messages.FormatMessage(choice == "1" ? 81 : 82,
+                ("gold", player.Gold)));
+            return;
+        }
+    }
+
     public bool StartAttack()
     {
         Player player = Player ?? throw new InvalidOperationException(
@@ -151,6 +182,7 @@ public class Game
         OccupationMessageIdFor(player.Occupation))),
         ("weapon", _messages.GetMessage(
         WeaponMessageIdFor(player.Occupation)))));
+        _output.WriteLine(player.Weapon.asciiArt);
 
         while (true)
         {

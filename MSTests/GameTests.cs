@@ -333,10 +333,8 @@ public class GameTests
     [TestMethod]
     public void StartAdventure_SouthReturnsToPathChoice()
     {
-        Setup s = CreateGame("1\ns\ne\n");
+        Setup s = CreateGameWithPlayer(CreateElfThiefAnswers + ProceedOnAdventure + "s\n3\ne\n");
         s.Game.StartGame();
-
-        s.Game.StartAdventure(() => { });
 
         string output = s.Output.ToString();
         Assert.AreEqual(1, CountText(output, s.Messages.GetMessage(SouthPathMessageId)));

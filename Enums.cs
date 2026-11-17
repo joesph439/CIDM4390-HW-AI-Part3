@@ -7,6 +7,13 @@ public enum Language
     Spanish,
     French
 }
+
+public enum Upgrade
+{
+    None,
+    MagicalArmor,
+    MagicalWeapon
+}
 public enum Occupation
 {
     Fighter,

@@ -2,7 +2,7 @@
   "5": "Bienvenue dans le jeu Choisissez Votre Aventure",
   "6": "Choisissez : 1. Créer un personnage ou 2. Quitter. Tapez '1' ou '2'",
   "7": "Vous marchez dans les montagnes. Vous voyez deux chemins : l'un monte vers le nord, plus haut dans les montagnes. L'autre mène vers le sud, dans les bois. Tapez 'n' pour le nord. Tapez 's' pour le sud. Tapez 'e' pour quitter le jeu.",
-  "8": "Vous prenez le chemin du sud. Après de longs jours, rien d'aventureux ne se produit. Vous vous ennuyez et rentrez chez vous, pauvre et toujours ennuyé.",
+  "8": "Vous prenez le chemin du sud et rencontrez un marchand dans les bois.",
   "9": "Vous prenez le chemin du nord. Après des heures de marche, l'air devient plus froid et les arbres se font plus rares. Vous vous retrouvez face à un dragon. Le dragon garde un trésor d'or derrière lui.",
   "10": "Le dragon dit : 'Je suis {dragonName}. Partez ou périssez !'",
   "11": "Votre anneau magique vous donne les statistiques du dragon.",
@@ -73,5 +73,16 @@
   "76": "Bâton",
   "77": "Dague",
   "78": "Arc",
-  "79": "lancer"
+  "79": "lancer",
+  "80": "Choisissez : 1. Armure magique (50 pièces d'or) : réduit les dégâts du dragon de 3, minimum 0. 2. Arme magique (75 pièces d'or) : enchante votre arme actuelle et ajoute 5 dégâts aux attaques réussies et non parées. 3. Partir.",
+  "81": "Vous avez acheté une armure magique ! Les dégâts du dragon sont réduits de 3, minimum 0. Or restant : {gold}.",
+  "82": "Votre arme est maintenant magique ! Les attaques réussies et non parées infligent 5 dégâts supplémentaires. Or restant : {gold}.",
+  "83": "Vous n'avez pas assez d'or. Choisissez un autre objet ou partez.",
+  "84": "Vous possédez déjà une amélioration. Un seul achat est autorisé par partie.",
+  "85": "Or",
+  "86": "Amélioration",
+  "87": "Aucune",
+  "88": "Armure magique",
+  "89": "Arme magique",
+  "90": "Votre or : {gold}"
 }

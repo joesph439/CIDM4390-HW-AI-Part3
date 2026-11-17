@@ -2,7 +2,7 @@
   "5": "Welcome to Choose Your Adventure Game",
   "6": "Choose: 1. Create Character or 2. Exit. Type '1' or '2'",
   "7": "You are walking in the mountains. You see two paths, one leading north and higher into the mountains. The other path leads south and into the woods. Enter 'n' for North. Enter 's' for South. Enter 'e' for exit game.",
-  "8": "You take the South path. After many long days, nothing adventurous happens. You are bored and return home, poor, and still bored.",
+  "8": "You take the south path and meet a merchant in the woods.",
   "9": "You take the North path. After walking for hours, the air grows colder, and the trees become more sparse. You are confronted with a dragon. The dragon has a hoard of gold behind it.",
   "10": "The dragon says 'I am {dragonName}. Leave or perish!'",
   "11": "Your magic ring gives you the stats on the dragon.",
@@ -73,5 +73,16 @@
   "76": "Staff",
   "77": "Dagger",
   "78": "Bow",
-  "79": "roll"
+  "79": "roll",
+  "80": "Choose: 1. Magical armor (50 gold): reduces dragon damage by 3, minimum 0. 2. Magical weapon (75 gold): enchants your current weapon for +5 damage on successful, undefended attacks. 3. Leave.",
+  "81": "You purchased magical armor! Dragon damage is reduced by 3, minimum 0. Gold remaining: {gold}.",
+  "82": "Your weapon is now magical! Successful, undefended attacks deal +5 damage. Gold remaining: {gold}.",
+  "83": "You do not have enough gold. Choose another item or leave.",
+  "84": "You already own an upgrade. Only one purchase is allowed per game.",
+  "85": "Gold",
+  "86": "Upgrade",
+  "87": "None",
+  "88": "Magical armor",
+  "89": "Magical weapon",
+  "90": "Your gold: {gold}"
 }
